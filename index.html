@@ -1,176 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وبلاگ کالاف دیوتی</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081426">
+  <title>CODM MARKET | صفحه اصلی</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0d1b2d;--panel2:#12243a;--blue:#1687ff;--cyan:#51c7ff;--text:#f3f7ff;--muted:#9db0c9;--line:#203650}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 80% -10%,#123b68 0,transparent 38%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:5;background:#07111feF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}.brand{font-weight:900;font-size:21px;letter-spacing:.5px}.brand b{color:var(--cyan)}
+    .links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #258fff;background:linear-gradient(135deg,#0875ee,#16a4ff);color:white;padding:10px 17px;border-radius:11px;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border-color:#315477;color:#dcecff}
+    .hero{padding:66px 0 44px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+    .tag{display:inline-block;border:1px solid #245987;background:#0c2744;color:#8fd7ff;padding:5px 12px;border-radius:999px;font-size:12px}
+    h1{font-size:clamp(32px,5vw,56px);line-height:1.35;margin:15px 0}.hero p{color:var(--muted);max-width:580px}
+    .hero-art{min-height:280px;border:1px solid #24517c;border-radius:24px;background:linear-gradient(145deg,#153e68,#0c1b31 58%,#07111f);display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #4dbaff55;border-radius:50%;width:260px;height:260px}
+    .hero-art:after{width:190px;height:190px}.emblem{font-size:88px;filter:drop-shadow(0 0 22px #1687ff);z-index:1}
+    .hero-art small{position:absolute;bottom:20px;color:#b9dfff;letter-spacing:3px;font-weight:bold}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0 42px}
+    .stat,.card,.notice{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}.stat strong{display:block;color:var(--cyan);font-size:22px}.stat span{color:var(--muted);font-size:12px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 16px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:#0d1b2d;color:#c6d8ed;border:1px solid var(--line);border-radius:9px;padding:7px 12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{padding:0;overflow:hidden}.cover{height:132px;background:linear-gradient(135deg,#174d80,#101d31);display:grid;place-items:center;font-size:46px}.card-body{padding:15px}.card h3{margin:0 0 6px;font-size:17px}.meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:12px}.pill{background:#142d49;border:1px solid #25496d;padding:3px 8px;border-radius:999px}.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price{color:#80d6ff;font-weight:bold}.muted{color:var(--muted);font-size:12px}
+    .notice{margin:28px 0;color:#c7d8eb;font-size:13px;border-color:#315477;background:#0b1d31}
+    footer{border-top:1px solid var(--line);margin-top:45px;padding:25px 0;color:var(--muted);font-size:12px}
+    @media(max-width:760px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:40px}.hero-art{min-height:210px}.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:10px}.stat strong{font-size:18px}.nav .btn{padding:8px 10px;font-size:12px}}
+  </style>
 </head>
-<audio id="bgMusic" loop>
-    <source src="music/background.mp3" type="audio/mpeg">
-</audio>
-
-<button id="fullscreenBtn">🎮 ورود به حالت تمام صفحه</button>
 <body>
-    
-</button>
-    <nav>
-</section>
-        <h2>🎮 CODM BLOG
-        <ul>
-            <ul>
-    <li><a href="home.html">خانه</a></li>
-    <li><a href="news.html">اخبار</a></li>
-    <li><a href="tutorial.html">آموزش</a></li>
-    <li><a href="contact.html">تماس با ما</a></li>
-<audio id="bgMusic" loop>
-    <source src="instrumental-music-content-instagram-1.mp3" type="audio/mpeg">
-</audio>
-</ul>
-        </ul>
-        <button id="themeBtn">🌙</button>
-    </nav>
-    <header class="hero">
-<header class="hero">
-
-    <div class="hero-bg"></div>
-
-    <div class="hero-glow glow1"></div>
-    <div class="hero-glow glow2"></div>
-
-    <div class="hero-content">
-
-        <h1>PIXEL<span>NOVA</span></h1>
-
-        <p>Experience The Next Generation Of Gaming</p>
-
-        <div class="hero-buttons">
-
-            <a href="#" class="btn-gold">شروع</a>
-
-            <a href="#" class="btn-glass">اخبار</a>
-
-        </div>
-
+<header><div class="wrap nav">
+  <a class="brand" href="#"><b>CODM</b> MARKET</a>
+  <nav class="links"><a href="#listings">آگهی‌های نمایشی</a><a href="#how">راهنما</a><a href="#about">درباره ما</a></nav>
+  <a class="btn ghost" href="#how">راهنمای ثبت آگهی</a>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="tag">COMMUNITY • CODM</span>
+      <h1>دنیای کالاف،<br><span style="color:var(--cyan)">با یک تجربه متفاوت</span></h1>
+      <p>به CODM MARKET خوش آمدی؛ یک طرح اولیه برای معرفی پروفایل‌ها و آگهی‌های جامعه بازیکنان Call of Duty: Mobile با ظاهر مدرن و آبی.</p>
+      <div class="actions"><a class="btn" href="#listings">دیدن آگهی‌های نمونه</a><a class="btn ghost" href="#how">چطور کار می‌کند؟</a></div>
     </div>
-
-</header>
-    
-
-</header>
-<section class="search-box">
-
-    <input type="text" id="search" placeholder="جستجوی مقاله...">
-
-</section>
-    <section class="title">
-        <h2>آخرین مقالات</h2>
-    </section>
-
-    <main>
-        <article>
-
-            <h2>بهترین اسلحه فصل جدید</h2>
-
-            <p>
-                بهترین کلاس‌های اسلحه برای رنک، اتچمنت‌های پیشنهادی و تنظیمات حرفه‌ای را در این مقاله بررسی می‌کنیم.
-            </p>
-
-            <button>ادامه مطلب</button>
-
-        </article>
-
-        <article>
-
-            <h2>ترفند افزایش FPS</h2>
-
-            <p>
-                اگر گوشی‌ات لگ دارد، با این تنظیمات ساده می‌توانی بازی را روان‌تر اجرا کنی.
-            </p>
-
-            <button>ادامه مطلب</button>
-
-        </article>
-
-        <article>
-
-            <h2>چطور هدشات بیشتری بزنیم؟</h2>
-
-            <p>
-                چند تکنیک ساده اما حرفه‌ای که باعث می‌شود دقت تیراندازی‌ات بیشتر شود.
-            </p>
-
-            <button>ادامه مطلب</button>
-
-        </article>
-
-    </main>
-
-<section class="games">
-
-    <h2>🎮 محبوب‌ترین بازی‌ها</h2>
-
-    <div class="game-container">
-
-        <!-- Call of Duty -->
-        <div class="game-card">
-            <img src="images/callofduty.jpg" alt="Call of Duty">
-
-            <h3>🎯 Call of Duty Mobile</h3>
-
-            <p>اخبار، آموزش و بهترین کلاس‌های اسلحه.</p>
-
-            <a href="callofduty.html">ورود</a>
-        </div>
-
-        <!-- Minecraft -->
-        <div class="game-card">
-            <img src="images/minecraft.png" alt="Minecraft">
-
-            <h3>⛏️ Minecraft</h3>
-
-            <p>آموزش ساخت، مودها، سرورها و ترفندهای حرفه‌ای.</p>
-
-            <a href="minecraft.html">ورود</a>
-        </div>
-
-        <!-- GTA -->
-        <div class="game-card">
-            <img src="images/gta.png" alt="GTA V">
-
-            <h3>🚗 GTA V</h3>
-
-            <p>ماموریت‌ها، رازها، مادها و اخبار GTA V.</p>
-
-            <a href="gta.html">ورود</a>
-        </div>
-
-        <!-- Roblox -->
-        <div class="game-card">
-            <img src="images/roblox2.png" alt="Roblox">
-
-            <h3>🧱 Roblox</h3>
-
-            <p>بهترین بازی‌ها، آموزش ساخت و کدهای روبلاکس.</p>
-
-            <a href="roblox.html">ورود</a>
-        </div>
-
+    <div class="hero-art" aria-label="نشان گرافیکی بازی">
+      <div class="emblem">✦</div><small>CALL OF DUTY MOBILE</small>
     </div>
-
-</section>
-    <footer>
-
-        <p>© 2025 تمامی حقوق محفوظ است.</p>
-
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
-        
+  </section>
+  <section class="stats">
+    <div class="stat"><strong>۰۳</strong><span>نمونه نمایشی</span></div>
+    <div class="stat"><strong>۲۴/۷</strong><span>راهنمایی و پشتیبانی (نمونه)</span></div>
+    <div class="stat"><strong>BLUE</strong><span>هویت بصری برند</span></div>
+  </section>
+  <section id="listings">
+    <div class="section-head"><div><h2>پروفایل‌های نمونه</h2><p>این موارد صرفاً برای نمایش چیدمان صفحه هستند.</p></div>
+      <div class="filters"><span class="filter">همه</span><span class="filter">رنک</span><span class="filter">سطح</span></div>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="cover">🏆</div><div class="card-body"><h3>پروفایل لجندری</h3><div class="meta"><span class="pill">Rank: Legendary</span><span class="pill">Level: 250</span></div><div class="card-foot"><span class="muted">نمونه نمایشی</span><span class="price">—</span></div></div></article>
+      <article class="card"><div class="cover">🌌</div><div class="card-body"><h3>پروفایل کلکسیونی</h3><div class="meta"><span class="pill">Rank: Master</span><span class="pill">Level: 180</span></div><div class="card-foot"><span class="muted">نمونه نمایشی</span><span class="price">—</span></div></div></article>
+      <article class="card"><div class="cover">⚡</div><div class="card-body"><h3>پروفایل رقابتی</h3><div class="meta"><span class="pill">Rank: Grand Master</span><span class="pill">Level: 210</span></div><div class="card-foot"><span class="muted">نمونه نمایشی</span><span class="price">—</span></div></div></article>
+    </div>
+  </section>
+  <section id="how" class="notice"><strong>توجه:</strong> این نسخه فقط قالب نمایشی صفحه اصلی است؛ ثبت آگهی، ورود کاربران، خرید و پرداخت فعال نیست. پیش از هرگونه معامله، قوانین رسمی Activision درباره انتقال حساب را بررسی کنید و اطلاعات ورود یا رمز عبور را در سایت دریافت یا ذخیره نکنید. هرگونه پرداخت واقعی باید با نظارت والدین/سرپرست و از مسیر قانونی و مجاز انجام شود.</section>
+  <section id="about" class="section-head"><div><h2>CODM MARKET</h2><p>یک نمونه اولیه فرانت‌اند؛ آماده اتصال به محتوای واقعی و امکانات امن پس از بررسی قوانین و الزامات.</p></div></section>
+</main>
+<footer><div class="wrap">© CODM MARKET — طرح اولیه رابط کاربری. این وب‌سایت وابسته یا مورد تأیید Activision نیست.</div></footer>
+</body></html>
